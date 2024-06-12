@@ -1,0 +1,41 @@
+{
+  "name": "finmaster",
+  "version": "1.0.0",
+  "description": "FinMaster: The ultimate toolkit for advanced financial calculations and analysis, designed to empower financial professionals and developers alike.",
+  "main": "src/finmaster.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anutechofficial/FinMaster.git"
+  },
+  "keywords": [
+    "Financial",
+    "Financial",
+    "Calculation",
+    "Analysis",
+    "Money",
+    "Math",
+    "Wealth",
+    "Accounting",
+    "Interest",
+    "Loan",
+    "Financial",
+    "tools",
+    "Financial",
+    "functions",
+    "Financial",
+    "calculations",
+    "Financial",
+    "analysis",
+    "Excel",
+    "functions"
+  ],
+  "author": "Anurag Yadav (anutechofficial)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anutechofficial/FinMaster/issues"
+  },
+  "homepage": "https://github.com/anutechofficial/FinMaster#readme"
+}
