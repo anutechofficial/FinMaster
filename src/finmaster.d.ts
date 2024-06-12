@@ -1,5 +1,5 @@
 /**
- * @class FinMaster
+ * @class Finmaster
  */
 export class Finmaster {
   /**
