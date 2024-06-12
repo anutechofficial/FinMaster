@@ -25,7 +25,7 @@ const finMaster = require('finmaster');
 Calculates the present value of an investment.
 
 ```javascript
-const pv = finMaster.PV(rate, nper, pmt, fv, type);
+const pv = finMaster.calculatePV(rate, nper, pmt, fv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -39,7 +39,7 @@ const pv = finMaster.PV(rate, nper, pmt, fv, type);
 Calculates the future value of an investment.
 
 ```javascript
-const fv = finMaster.FV(rate, nper, pmt, pv, type);
+const fv = finMaster.calculateFV(rate, nper, pmt, pv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -53,7 +53,7 @@ const fv = finMaster.FV(rate, nper, pmt, pv, type);
 Calculates the payment for a loan based on constant payments and a constant interest rate.
 
 ```javascript
-const pmt = finMaster.PMT(rate, nper, pv, fv, type);
+const pmt = finMaster.calculatePMT(rate, nper, pv, fv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -67,7 +67,7 @@ const pmt = finMaster.PMT(rate, nper, pv, fv, type);
 Calculates the interest payment for a given period for an investment based on periodic, constant payments and a constant interest rate.
 
 ```javascript
-const ipmt = finMaster.IPMT(rate, per, nper, pv, fv, type);
+const ipmt = finMaster.calculateIPMT(rate, per, nper, pv, fv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -82,7 +82,7 @@ const ipmt = finMaster.IPMT(rate, per, nper, pv, fv, type);
 Calculates the net present value of a series of cash flows at a given discount rate.
 
 ```javascript
-const npv = finMaster.NPV(rate, ...cashFlows);
+const npv = finMaster.calculateNPV(rate, ...cashFlows);
 ```
 
 - `rate`: The discount rate.
@@ -93,7 +93,7 @@ const npv = finMaster.NPV(rate, ...cashFlows);
 Calculates the internal rate of return for a series of cash flows.
 
 ```javascript
-const irr = finMaster.IRR(...cashFlows);
+const irr = finMaster.calculateIRR(...cashFlows);
 ```
 
 - `...cashFlows`: The series of cash flows.
@@ -103,7 +103,7 @@ const irr = finMaster.IRR(...cashFlows);
 Calculates the interest rate per period of an annuity.
 
 ```javascript
-const rate = finMaster.RATE(nper, pmt, pv, fv, type, guess);
+const rate = finMaster.calculateRATE(nper, pmt, pv, fv, type, guess);
 ```
 
 - `nper`: The number of periods.
@@ -121,31 +121,31 @@ const rate = finMaster.RATE(nper, pmt, pv, fv, type, guess);
 const finMaster = require('finmaster');
 
 // Calculate Present Value
-const pv = finMaster.PV(0.05 / 12, 12 * 10, -100, 1000, 0);
+const pv = finMaster.calculatePV(0.05 / 12, 12 * 10, -100, 1000, 0);
 console.log(`Present Value: ${pv}`);
 
 // Calculate Future Value
-const fv = finMaster.FV(0.05 / 12, 12 * 10, -100, 0, 0);
+const fv = finMaster.calculateFV(0.05 / 12, 12 * 10, -100, 0, 0);
 console.log(`Future Value: ${fv}`);
 
 // Calculate Payment
-const pmt = finMaster.PMT(0.05 / 12, 12 * 10, 1000, 0, 0);
+const pmt = finMaster.calculatePMT(0.05 / 12, 12 * 10, 1000, 0, 0);
 console.log(`Payment: ${pmt}`);
 
 // Calculate Interest Payment
-const ipmt = finMaster.IPMT(0.05 / 12, 1, 12 * 10, 1000, 0, 0);
+const ipmt = finMaster.calculateIPMT(0.05 / 12, 1, 12 * 10, 1000, 0, 0);
 console.log(`Interest Payment: ${ipmt}`);
 
 // Calculate Net Present Value
-const npv = finMaster.NPV(0.05, -100, 30, 40, 50, 60);
+const npv = finMaster.calculateNPV(0.05, -100, 30, 40, 50, 60);
 console.log(`Net Present Value: ${npv}`);
 
 // Calculate Internal Rate of Return
-const irr = finMaster.IRR(-100, 30, 40, 50, 60);
+const irr = finMaster.calculateIRR(-100, 30, 40, 50, 60);
 console.log(`Internal Rate of Return: ${irr}`);
 
 // Calculate Rate
-const rate = finMaster.RATE(12 * 10, -100, 1000, 0, 0);
+const rate = finMaster.calculateRATE(12 * 10, -100, 1000, 0, 0);
 console.log(`Rate: ${rate}`);
 ```
 
