@@ -2,6 +2,25 @@
 
 `finMaster` is a comprehensive financial calculation library for Node.js, providing functions to calculate Present Value (PV), Future Value (FV), Payment (PMT), Interest Payment (IPMT), Net Present Value (NPV), Internal Rate of Return (IRR), and Rate (RATE).
 
+## Table of Contents
+
+- [finMaster](#finmaster)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Functions](#functions)
+      - [PV (Present Value)](#pv-present-value)
+      - [FV (Future Value)](#fv-future-value)
+      - [PMT (Payment)](#pmt-payment)
+      - [IPMT (Interest Payment)](#ipmt-interest-payment)
+      - [NPV (Net Present Value)](#npv-net-present-value)
+      - [IRR (Internal Rate of Return)](#irr-internal-rate-of-return)
+      - [RATE](#rate)
+  - [Examples](#examples)
+    - [Example Usage](#example-usage)
+  - [Contributing](#contributing)
+  - [License](#license)
+
 ## Installation
 
 To install `finMaster`, use npm:
@@ -15,7 +34,7 @@ npm install finmaster
 First, import the `finMaster` library into your project:
 
 ```javascript
-const finMaster = require('finmaster');
+const finMaster = require("finmaster");
 ```
 
 ### Functions
@@ -118,7 +137,7 @@ const rate = finMaster.calculateRATE(nper, pmt, pv, fv, type, guess);
 ### Example Usage
 
 ```javascript
-const finMaster = require('finmaster');
+const finMaster = require("finmaster");
 
 // Calculate Present Value
 const pv = finMaster.calculatePV(0.05 / 12, 12 * 10, -100, 1000, 0);
