@@ -22,15 +22,10 @@
  * SOFTWARE.
  */
 
-// module.exports = {
-//   getRemainingLoanTerm: getRemainingLoanTerm,
-//   calculatePV: calculatePV,
-//   calculatePMT: calculatePMT,
-// };
 
-let Function = function () {};
+let Finmaster = function () {};
 
-Function.prototype.calculatePV = function (
+Finmaster.prototype.calculatePV = function (
   rate,
   nper,
   pmt,
