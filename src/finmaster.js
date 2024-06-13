@@ -45,6 +45,29 @@ class FinMaster {
     return pv;
   }
 
+  calculateFV(rate, nper, pmt, pv = 0, type = 0) {
+    let fv = 0;
+  
+    // Calculate discount factor
+    let discountFactor = Math.pow(1 + rate, nper);
+  
+    // Calculate future value of payments
+    for (let i = 1; i <= nper; i++) {
+      fv += pmt * Math.pow(1 + rate, nper - i);
+    }
+  
+    // Add future value of present cash flow
+    fv += pv * discountFactor;
+  
+    // Adjust for payment timing
+    if (type === 1) {
+      fv *= 1 + rate;
+    }
+  
+    return fv;
+  }
+
+
   calculatePMT(rate, nper, pv, fv = 0, type = 0) {
     const r = rate / 100 / 12; // Convert annual interest rate to monthly rate
 

@@ -31,7 +31,7 @@ export declare class FinMaster {
     rate: number,
     nper: number,
     pmt: number,
-    fv?: number,
+    pv?: number,
     type?: 0 | 1
   ): number;
   /**
@@ -42,7 +42,6 @@ export declare class FinMaster {
    * @param pv   Required. The present value, or the total amount that a series of future payments is worth now; also known as the principal.
    * @param fv    Optional. The future value, or a cash balance you want to attain after the last payment is made. If fv is omitted, it is assumed to be 0 (zero), that is, the future value of a loan is 0.
    * @param type  Optional. The number 0 (zero) or 1 and indicates when payments are due.
-
    */
   public calculatePMT(
     rate: number,
