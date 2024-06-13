@@ -32,8 +32,6 @@ To install `FinMaster`, use npm:
 npm install finmaster
 ```
 
-Certainly! Here's an updated section for your README file that reflects the correct usage with both CommonJS (`require`) and ES6 (`import`) module syntax:
-
 ---
 
 ## Usage
