@@ -52,3 +52,8 @@ export declare class FinMaster {
     type?: 0 | 1
   ): number;
 }
+
+declare module 'finmaster' {
+  export = FinMaster;
+  export as namespace FinMaster;
+}

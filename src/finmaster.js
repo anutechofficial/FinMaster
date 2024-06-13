@@ -92,3 +92,5 @@ class FinMaster {
 }
 
 module.exports = FinMaster;
+module.exports.default = FinMaster;
+module.exports.FinMaster = FinMaster;
