@@ -1,6 +1,6 @@
 {
   "name": "finmaster",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "FinMaster: The ultimate toolkit for advanced financial calculations and analysis, designed to empower financial professionals and developers alike.",
   "main": "src/finmaster.js",
   "scripts": {
