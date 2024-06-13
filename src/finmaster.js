@@ -23,6 +23,7 @@
  */
 
 class FinMaster {
+  //PV
   calculatePV(rate, nper, pmt, fv = 0, type = 0) {
     let pv = 0;
 
@@ -45,6 +46,7 @@ class FinMaster {
     return pv;
   }
 
+  //FV
   calculateFV(rate, nper, pmt, pv = 0, type = 0) {
     let fv = 0;
   
@@ -67,7 +69,7 @@ class FinMaster {
     return fv;
   }
 
-
+  //PMT
   calculatePMT(rate, nper, pv, fv = 0, type = 0) {
     const r = rate / 100 / 12; // Convert annual interest rate to monthly rate
 
@@ -86,6 +88,7 @@ class FinMaster {
     return +Math.abs(pmti);
   }
 
+  //getRemainingLoanTerm
   getRemainingLoanTerm(startDateStr, loanTerm, loanTermUnit) {
     // Parse the start date
     const [startMonth, startYear] = startDateStr.split(" ");
@@ -112,6 +115,8 @@ class FinMaster {
 
     return remainingLoanTerm > 0 ? remainingLoanTerm : 0; // If the loan is already paid off, return 0
   }
+
+  //Upcoming Functions
 }
 
 module.exports = FinMaster;

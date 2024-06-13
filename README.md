@@ -1,6 +1,6 @@
 # FinMaster
 
-## <span style="color:red">Under Development 🚧</span>
+## Under Development 🚧
 
 Will be Published with New Version Within a Week - Stay Tuned
 
@@ -26,6 +26,13 @@ Will be Published with New Version Within a Week - Stay Tuned
       - [RATE](#rate)
   - [Examples](#examples)
     - [Example Usage](#example-usage)
+  - [Advance Functions](#advance-functions)
+    - [Get Remaining Loan Term's](#get-remaining-loan-terms)
+      - [Function Signature](#function-signature)
+      - [Parameters](#parameters)
+      - [Returns](#returns)
+      - [Throws](#throws)
+      - [Example](#example)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -106,7 +113,7 @@ console.log('Present Value:', pv);
 Calculates the present value of an investment.
 
 ```javascript
-const pv = FinMaster.calculatePV(rate, nper, pmt, fv, type);
+const pv = finMaster.calculatePV(rate, nper, pmt, fv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -120,7 +127,7 @@ const pv = FinMaster.calculatePV(rate, nper, pmt, fv, type);
 Calculates the future value of an investment.
 
 ```javascript
-const fv = FinMaster.calculateFV(rate, nper, pmt, pv, type);
+const fv = finMaster.calculateFV(rate, nper, pmt, pv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -134,7 +141,7 @@ const fv = FinMaster.calculateFV(rate, nper, pmt, pv, type);
 Calculates the payment for a loan based on constant payments and a constant interest rate.
 
 ```javascript
-const pmt = FinMaster.calculatePMT(rate, nper, pv, fv, type);
+const pmt = finMaster.calculatePMT(rate, nper, pv, fv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -148,7 +155,7 @@ const pmt = FinMaster.calculatePMT(rate, nper, pv, fv, type);
 Calculates the interest payment for a given period for an investment based on periodic, constant payments and a constant interest rate.
 
 ```javascript
-const ipmt = FinMaster.calculateIPMT(rate, per, nper, pv, fv, type);
+const ipmt = finMaster.calculateIPMT(rate, per, nper, pv, fv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -163,7 +170,7 @@ const ipmt = FinMaster.calculateIPMT(rate, per, nper, pv, fv, type);
 Calculates the net present value of a series of cash flows at a given discount rate.
 
 ```javascript
-const npv = FinMaster.calculateNPV(rate, ...cashFlows);
+const npv = finMaster.calculateNPV(rate, ...cashFlows);
 ```
 
 - `rate`: The discount rate.
@@ -174,7 +181,7 @@ const npv = FinMaster.calculateNPV(rate, ...cashFlows);
 Calculates the internal rate of return for a series of cash flows.
 
 ```javascript
-const irr = FinMaster.calculateIRR(...cashFlows);
+const irr = finMaster.calculateIRR(...cashFlows);
 ```
 
 - `...cashFlows`: The series of cash flows.
@@ -184,7 +191,7 @@ const irr = FinMaster.calculateIRR(...cashFlows);
 Calculates the interest rate per period of an annuity.
 
 ```javascript
-const rate = FinMaster.calculateRATE(nper, pmt, pv, fv, type, guess);
+const rate = finMaster.calculateRATE(nper, pmt, pv, fv, type, guess);
 ```
 
 - `nper`: The number of periods.
@@ -201,34 +208,86 @@ const rate = FinMaster.calculateRATE(nper, pmt, pv, fv, type, guess);
 ```javascript
 const FinMaster = require("finmaster");
 
+const finMaster = new FinMaster();
+
 // Calculate Present Value
-const pv = FinMaster.calculatePV(0.05 / 12, 12 * 10, -100, 1000, 0);
+const pv = finMaster.calculatePV(0.05 / 12, 12 * 10, -100, 1000, 0);
 console.log(`Present Value: ${pv}`);
 
 // Calculate Future Value
-const fv = FinMaster.calculateFV(0.05 / 12, 12 * 10, -100, 0, 0);
+const fv = finMaster.calculateFV(0.05 / 12, 12 * 10, -100, 0, 0);
 console.log(`Future Value: ${fv}`);
 
 // Calculate Payment
-const pmt = FinMaster.calculatePMT(0.05 / 12, 12 * 10, 1000, 0, 0);
+const pmt = finMaster.calculatePMT(0.05 / 12, 12 * 10, 1000, 0, 0);
 console.log(`Payment: ${pmt}`);
 
 // Calculate Interest Payment
-const ipmt = FinMaster.calculateIPMT(0.05 / 12, 1, 12 * 10, 1000, 0, 0);
+const ipmt = finMaster.calculateIPMT(0.05 / 12, 1, 12 * 10, 1000, 0, 0);
 console.log(`Interest Payment: ${ipmt}`);
 
 // Calculate Net Present Value
-const npv = FinMaster.calculateNPV(0.05, -100, 30, 40, 50, 60);
+const npv = finMaster.calculateNPV(0.05, -100, 30, 40, 50, 60);
 console.log(`Net Present Value: ${npv}`);
 
 // Calculate Internal Rate of Return
-const irr = FinMaster.calculateIRR(-100, 30, 40, 50, 60);
+const irr = finMaster.calculateIRR(-100, 30, 40, 50, 60);
 console.log(`Internal Rate of Return: ${irr}`);
 
 // Calculate Rate
-const rate = FinMaster.calculateRATE(12 * 10, -100, 1000, 0, 0);
+const rate = finMaster.calculateRATE(12 * 10, -100, 1000, 0, 0);
 console.log(`Rate: ${rate}`);
 ```
+
+## Advance Functions
+
+### Get Remaining Loan Term's
+
+The `getRemainingLoanTerm` function calculates the remaining term of a loan given its start date, term length, and term unit. This is useful for determining how much time is left before a loan is fully paid off.
+
+#### Function Signature
+
+```typescript
+/**
+ * Calculates the remaining loan term in months.
+ * @param startDateStr - The start date of the loan in the format "MM YYYY", "MMM YYYY".
+ * @param loanTerm - The length of the loan term (either in years or months).
+ * @param loanTermUnit - The unit of the loan term ("Years" or "Months").
+ * @returns The remaining loan term in months, or 0 if the loan is already paid off.
+ * @throws Will throw an error if the loan term unit is invalid.
+ */
+declare function getRemainingLoanTerm(
+  startDateStr: string,
+  loanTerm: number,
+  loanTermUnit: "Years" | "Months"
+): number;
+```
+
+#### Parameters
+
+- `startDateStr` (string): The start date of the loan in the format "MM YYYY" ("06 2020"), "MMM YYYY" ("Jun 2020).
+- `loanTerm` (number): The length of the loan term (either in years or months).
+- `loanTermUnit` ("Years" | "Months"): The unit of the loan term ("Years" or "Months").
+
+#### Returns
+
+- `number`: The remaining loan term in months, or 0 if the loan is already paid off.
+
+#### Throws
+
+- Will throw an error if the loan term unit is invalid.
+
+#### Example
+
+Here is an example of how to use the `getRemainingLoanTerm` function:
+
+```javascript
+// Assuming the function is imported or available in your project
+const remainingTerm = finMaster.getRemainingLoanTerm("06 2020", 5, "Years");
+console.log(`Remaining loan term: ${remainingTerm} months`);
+```
+
+This function is especially useful for financial applications where users need to track the duration of their loans and understand how much time remains before they are paid off.
 
 ## Contributing
 

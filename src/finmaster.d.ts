@@ -50,9 +50,23 @@ export declare class FinMaster {
     fv?: number,
     type?: 0 | 1
   ): number;
+
+  /**
+   * Calculates the remaining loan term in months.
+   * @param startDateStr - The start date of the loan in the format "MM YYYY".
+   * @param loanTerm - The length of the loan term (either in years or months).
+   * @param loanTermUnit - The unit of the loan term ("Years" or "Months").
+   * @returns The remaining loan term in months, or 0 if the loan is already paid off.
+   * @throws Will throw an error if the loan term unit is invalid.
+   */
+  public getRemainingLoanTerm(
+    startDateStr: string,
+    loanTerm: number,
+    loanTermUnit: "Years" | "Months"
+  ): number;
 }
 
-declare module 'finmaster' {
+declare module "finmaster" {
   export = FinMaster;
   export as namespace FinMaster;
 }
