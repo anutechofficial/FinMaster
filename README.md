@@ -1,13 +1,16 @@
-# finMaster
+# FinMaster
 
-`finMaster` is a comprehensive financial calculation library for Node.js, providing functions to calculate Present Value (PV), Future Value (FV), Payment (PMT), Interest Payment (IPMT), Net Present Value (NPV), Internal Rate of Return (IRR), and Rate (RATE).
+`FinMaster` is a comprehensive financial calculation library for Node.js, providing functions to calculate Present Value (PV), Future Value (FV), Payment (PMT), Interest Payment (IPMT), Net Present Value (NPV), Internal Rate of Return (IRR), and Rate (RATE).
 
 ## Table of Contents
 
-- [finMaster](#finmaster)
+- [FinMaster](#finmaster)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
+    - [CommonJS (Node.js)](#commonjs-nodejs)
+    - [ES6 Modules](#es6-modules)
+    - [TypeScript](#typescript)
     - [Functions](#functions)
       - [PV (Present Value)](#pv-present-value)
       - [FV (Future Value)](#fv-future-value)
@@ -23,19 +26,75 @@
 
 ## Installation
 
-To install `finMaster`, use npm:
+To install `FinMaster`, use npm:
 
 ```bash
 npm install finmaster
 ```
 
+Certainly! Here's an updated section for your README file that reflects the correct usage with both CommonJS (`require`) and ES6 (`import`) module syntax:
+
+---
+
 ## Usage
 
-First, import the `finMaster` library into your project:
+### CommonJS (Node.js)
+
+First, install `FinMaster` from npm:
+
+```bash
+npm install finmaster
+```
+
+Then, import `FinMaster` into your project:
 
 ```javascript
-const finMaster = require("finmaster");
+const FinMaster = require('finmaster');
+const finMaster = new FinMaster();
+
+let pv = finMaster.calculatePV(0.05, 10, 1000);
+console.log('Present Value:', pv);
 ```
+
+### ES6 Modules
+
+If you are using ES6 modules (recommended for newer Node.js projects or with TypeScript):
+
+```bash
+npm install finmaster
+```
+
+Import `FinMaster` into your project:
+
+```javascript
+import FinMaster from 'finmaster';
+
+const finMaster = new FinMaster();
+
+let pv = finMaster.calculatePV(0.05, 10, 1000);
+console.log('Present Value:', pv);
+```
+
+### TypeScript
+
+For TypeScript users, ensure you have typings installed:
+
+```bash
+npm install --save-dev @types/finmaster
+```
+
+Then, import and use `FinMaster`:
+
+```typescript
+import { FinMaster } from 'finmaster';
+
+const finMaster = new FinMaster();
+
+let pv = finMaster.calculatePV(0.05, 10, 1000);
+console.log('Present Value:', pv);
+```
+
+---
 
 ### Functions
 
@@ -44,7 +103,7 @@ const finMaster = require("finmaster");
 Calculates the present value of an investment.
 
 ```javascript
-const pv = finMaster.calculatePV(rate, nper, pmt, fv, type);
+const pv = FinMaster.calculatePV(rate, nper, pmt, fv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -58,7 +117,7 @@ const pv = finMaster.calculatePV(rate, nper, pmt, fv, type);
 Calculates the future value of an investment.
 
 ```javascript
-const fv = finMaster.calculateFV(rate, nper, pmt, pv, type);
+const fv = FinMaster.calculateFV(rate, nper, pmt, pv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -72,7 +131,7 @@ const fv = finMaster.calculateFV(rate, nper, pmt, pv, type);
 Calculates the payment for a loan based on constant payments and a constant interest rate.
 
 ```javascript
-const pmt = finMaster.calculatePMT(rate, nper, pv, fv, type);
+const pmt = FinMaster.calculatePMT(rate, nper, pv, fv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -86,7 +145,7 @@ const pmt = finMaster.calculatePMT(rate, nper, pv, fv, type);
 Calculates the interest payment for a given period for an investment based on periodic, constant payments and a constant interest rate.
 
 ```javascript
-const ipmt = finMaster.calculateIPMT(rate, per, nper, pv, fv, type);
+const ipmt = FinMaster.calculateIPMT(rate, per, nper, pv, fv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -101,7 +160,7 @@ const ipmt = finMaster.calculateIPMT(rate, per, nper, pv, fv, type);
 Calculates the net present value of a series of cash flows at a given discount rate.
 
 ```javascript
-const npv = finMaster.calculateNPV(rate, ...cashFlows);
+const npv = FinMaster.calculateNPV(rate, ...cashFlows);
 ```
 
 - `rate`: The discount rate.
@@ -112,7 +171,7 @@ const npv = finMaster.calculateNPV(rate, ...cashFlows);
 Calculates the internal rate of return for a series of cash flows.
 
 ```javascript
-const irr = finMaster.calculateIRR(...cashFlows);
+const irr = FinMaster.calculateIRR(...cashFlows);
 ```
 
 - `...cashFlows`: The series of cash flows.
@@ -122,7 +181,7 @@ const irr = finMaster.calculateIRR(...cashFlows);
 Calculates the interest rate per period of an annuity.
 
 ```javascript
-const rate = finMaster.calculateRATE(nper, pmt, pv, fv, type, guess);
+const rate = FinMaster.calculateRATE(nper, pmt, pv, fv, type, guess);
 ```
 
 - `nper`: The number of periods.
@@ -137,34 +196,34 @@ const rate = finMaster.calculateRATE(nper, pmt, pv, fv, type, guess);
 ### Example Usage
 
 ```javascript
-const finMaster = require("finmaster");
+const FinMaster = require("finmaster");
 
 // Calculate Present Value
-const pv = finMaster.calculatePV(0.05 / 12, 12 * 10, -100, 1000, 0);
+const pv = FinMaster.calculatePV(0.05 / 12, 12 * 10, -100, 1000, 0);
 console.log(`Present Value: ${pv}`);
 
 // Calculate Future Value
-const fv = finMaster.calculateFV(0.05 / 12, 12 * 10, -100, 0, 0);
+const fv = FinMaster.calculateFV(0.05 / 12, 12 * 10, -100, 0, 0);
 console.log(`Future Value: ${fv}`);
 
 // Calculate Payment
-const pmt = finMaster.calculatePMT(0.05 / 12, 12 * 10, 1000, 0, 0);
+const pmt = FinMaster.calculatePMT(0.05 / 12, 12 * 10, 1000, 0, 0);
 console.log(`Payment: ${pmt}`);
 
 // Calculate Interest Payment
-const ipmt = finMaster.calculateIPMT(0.05 / 12, 1, 12 * 10, 1000, 0, 0);
+const ipmt = FinMaster.calculateIPMT(0.05 / 12, 1, 12 * 10, 1000, 0, 0);
 console.log(`Interest Payment: ${ipmt}`);
 
 // Calculate Net Present Value
-const npv = finMaster.calculateNPV(0.05, -100, 30, 40, 50, 60);
+const npv = FinMaster.calculateNPV(0.05, -100, 30, 40, 50, 60);
 console.log(`Net Present Value: ${npv}`);
 
 // Calculate Internal Rate of Return
-const irr = finMaster.calculateIRR(-100, 30, 40, 50, 60);
+const irr = FinMaster.calculateIRR(-100, 30, 40, 50, 60);
 console.log(`Internal Rate of Return: ${irr}`);
 
 // Calculate Rate
-const rate = finMaster.calculateRATE(12 * 10, -100, 1000, 0, 0);
+const rate = FinMaster.calculateRATE(12 * 10, -100, 1000, 0, 0);
 console.log(`Rate: ${rate}`);
 ```
 
