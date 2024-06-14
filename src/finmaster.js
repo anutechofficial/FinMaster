@@ -43,7 +43,7 @@ class FinMaster {
       pv /= 1 + rate;
     }
 
-    return pv;
+    return -pv;
   }
 
   //FV
@@ -66,12 +66,12 @@ class FinMaster {
       fv *= 1 + rate;
     }
   
-    return fv;
+    return -fv;
   }
 
   //PMT
   calculatePMT(rate, nper, pv, fv = 0, type = 0) {
-    const r = rate / 100 / 12; // Convert annual interest rate to monthly rate
+    const r = rate;
 
     let pmt;
     if (r === 0) {
@@ -83,9 +83,8 @@ class FinMaster {
         pmt = (pv * r) / ((1 - Math.pow(1 + r, -nper)) / r);
       }
     }
-    let pmti = +pmt.toFixed(2);
 
-    return +Math.abs(pmti);
+    return -pmt;
   }
 
   //getRemainingLoanTerm
