@@ -11,7 +11,7 @@ export declare class FinMaster {
    * @param fv  Optional. The future value, or a cash balance you want to attain after the last payment is made. If fv is omitted, it is assumed to be 0 (the future value of a loan, for example, is 0)
    * @param type  Optional. The number 0 or 1 and indicates when payments are due.
    */
-  public calculatePV(
+  public PV(
     rate: number,
     nper: number,
     pmt: number,
@@ -27,7 +27,7 @@ export declare class FinMaster {
    * @param pv    Optional. The present value, or the lump-sum amount that a series of future payments is worth right now. If pv is omitted, it is assumed to be 0 (zero), and you must include the pmt argument.
    * @param type  Optional. The number 0 or 1 and indicates when payments are due. If type is omitted, it is assumed to be 0.
    */
-  public calculateFV(
+  public FV(
     rate: number,
     nper: number,
     pmt: number,
@@ -43,7 +43,7 @@ export declare class FinMaster {
    * @param fv    Optional. The future value, or a cash balance you want to attain after the last payment is made. If fv is omitted, it is assumed to be 0 (zero), that is, the future value of a loan is 0.
    * @param type  Optional. The number 0 (zero) or 1 and indicates when payments are due.
    */
-  public calculatePMT(
+  public PMT(
     rate: number,
     nper: number,
     pv: number,

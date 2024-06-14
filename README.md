@@ -16,10 +16,10 @@ Some Functions are in Under Development 🚧 please go through with this Documen
       - [PV (Present Value)](#pv-present-value)
       - [FV (Future Value)](#fv-future-value)
       - [PMT (Payment)](#pmt-payment)
-      - [IPMT (Interest Payment) Under Development 🚧](#ipmt-interest-payment-under-development-)
-      - [NPV (Net Present Value) Under Development 🚧](#npv-net-present-value-under-development-)
-      - [IRR (Internal Rate of Return) Under Development 🚧](#irr-internal-rate-of-return-under-development-)
-      - [RATE Under Development 🚧](#rate-under-development-)
+      - [IPMT (Interest Payment) ~ Under Development 🚧](#ipmt-interest-payment--under-development-)
+      - [NPV (Net Present Value) ~ Under Development 🚧](#npv-net-present-value--under-development-)
+      - [IRR (Internal Rate of Return) ~ Under Development 🚧](#irr-internal-rate-of-return--under-development-)
+      - [RATE ~ Under Development 🚧](#rate--under-development-)
   - [Examples](#examples)
     - [Example Usage](#example-usage)
   - [Advance Functions](#advance-functions)
@@ -58,7 +58,7 @@ Then, import `FinMaster` into your project:
 const FinMaster = require('finmaster');
 const finMaster = new FinMaster();
 
-let pv = finMaster.calculatePV(0.05, 10, 1000);
+let pv = finMaster.PV(0.05, 10, 1000);
 console.log('Present Value:', pv);
 ```
 
@@ -77,7 +77,7 @@ import FinMaster from 'finmaster';
 
 const finMaster = new FinMaster();
 
-let pv = finMaster.calculatePV(0.05, 10, 1000);
+let pv = finMaster.PV(0.05, 10, 1000);
 console.log('Present Value:', pv);
 ```
 
@@ -96,7 +96,7 @@ import { FinMaster } from 'finmaster';
 
 const finMaster = new FinMaster();
 
-let pv = finMaster.calculatePV(0.05, 10, 1000);
+let pv = finMaster.PV(0.05, 10, 1000);
 console.log('Present Value:', pv);
 ```
 
@@ -109,7 +109,7 @@ console.log('Present Value:', pv);
 Calculates the present value of an investment.
 
 ```javascript
-const pv = finMaster.calculatePV(rate, nper, pmt, fv, type);
+const pv = finMaster.PV(rate, nper, pmt, fv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -123,7 +123,7 @@ const pv = finMaster.calculatePV(rate, nper, pmt, fv, type);
 Calculates the future value of an investment.
 
 ```javascript
-const fv = finMaster.calculateFV(rate, nper, pmt, pv, type);
+const fv = finMaster.FV(rate, nper, pmt, pv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -137,7 +137,7 @@ const fv = finMaster.calculateFV(rate, nper, pmt, pv, type);
 Calculates the payment for a loan based on constant payments and a constant interest rate.
 
 ```javascript
-const pmt = finMaster.calculatePMT(rate, nper, pv, fv, type);
+const pmt = finMaster.PMT(rate, nper, pv, fv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -146,12 +146,12 @@ const pmt = finMaster.calculatePMT(rate, nper, pv, fv, type);
 - `fv`: The future value.
 - `type`: 0 (end of period) or 1 (beginning of period).
 
-#### IPMT (Interest Payment) Under Development 🚧
+#### IPMT (Interest Payment) ~ Under Development 🚧
 
 Calculates the interest payment for a given period for an investment based on periodic, constant payments and a constant interest rate.
 
 ```javascript
-const ipmt = finMaster.calculateIPMT(rate, per, nper, pv, fv, type);
+const ipmt = finMaster.IPMT(rate, per, nper, pv, fv, type);
 ```
 
 - `rate`: The interest rate per period.
@@ -161,33 +161,33 @@ const ipmt = finMaster.calculateIPMT(rate, per, nper, pv, fv, type);
 - `fv`: The future value.
 - `type`: 0 (end of period) or 1 (beginning of period).
 
-#### NPV (Net Present Value) Under Development 🚧
+#### NPV (Net Present Value) ~ Under Development 🚧
 
 Calculates the net present value of a series of cash flows at a given discount rate.
 
 ```javascript
-const npv = finMaster.calculateNPV(rate, ...cashFlows);
+const npv = finMaster.NPV(rate, ...cashFlows);
 ```
 
 - `rate`: The discount rate.
 - `...cashFlows`: The series of cash flows.
 
-#### IRR (Internal Rate of Return) Under Development 🚧
+#### IRR (Internal Rate of Return) ~ Under Development 🚧
 
 Calculates the internal rate of return for a series of cash flows.
 
 ```javascript
-const irr = finMaster.calculateIRR(...cashFlows);
+const irr = finMaster.IRR(...cashFlows);
 ```
 
 - `...cashFlows`: The series of cash flows.
 
-#### RATE Under Development 🚧
+#### RATE ~ Under Development 🚧
 
 Calculates the interest rate per period of an annuity.
 
 ```javascript
-const rate = finMaster.calculateRATE(nper, pmt, pv, fv, type, guess);
+const rate = finMaster.RATE(nper, pmt, pv, fv, type, guess);
 ```
 
 - `nper`: The number of periods.
@@ -207,31 +207,31 @@ const FinMaster = require("finmaster");
 const finMaster = new FinMaster();
 
 // Calculate Present Value
-const pv = finMaster.calculatePV(0.05 / 12, 12 * 10, -100, 1000, 0);
+const pv = finMaster.PV(0.05 / 12, 12 * 10, -100, 1000, 0);
 console.log(`Present Value: ${pv}`);
 
 // Calculate Future Value
-const fv = finMaster.calculateFV(0.05 / 12, 12 * 10, -100, 0, 0);
+const fv = finMaster.FV(0.05 / 12, 12 * 10, -100, 0, 0);
 console.log(`Future Value: ${fv}`);
 
 // Calculate Payment
-const pmt = finMaster.calculatePMT(0.05 / 12, 12 * 10, 1000, 0, 0);
+const pmt = finMaster.PMT(0.05 / 12, 12 * 10, 1000, 0, 0);
 console.log(`Payment: ${pmt}`);
 
-// Calculate Interest Payment Under Development 🚧
-const ipmt = finMaster.calculateIPMT(0.05 / 12, 1, 12 * 10, 1000, 0, 0);
+// Calculate Interest Payment ~ Under Development 🚧
+const ipmt = finMaster.IPMT(0.05 / 12, 1, 12 * 10, 1000, 0, 0);
 console.log(`Interest Payment: ${ipmt}`);
 
-// Calculate Net Present Value Under Development 🚧
-const npv = finMaster.calculateNPV(0.05, -100, 30, 40, 50, 60);
+// Calculate Net Present Value ~ Under Development 🚧
+const npv = finMaster.NPV(0.05, -100, 30, 40, 50, 60);
 console.log(`Net Present Value: ${npv}`);
 
-// Calculate Internal Rate of Return Under Development 🚧
-const irr = finMaster.calculateIRR(-100, 30, 40, 50, 60);
+// Calculate Internal Rate of Return ~ Under Development 🚧
+const irr = finMaster.IRR(-100, 30, 40, 50, 60);
 console.log(`Internal Rate of Return: ${irr}`);
 
-// Calculate Rate Under Development 🚧
-const rate = finMaster.calculateRATE(12 * 10, -100, 1000, 0, 0);
+// Calculate Rate Under ~ Development 🚧
+const rate = finMaster.RATE(12 * 10, -100, 1000, 0, 0);
 console.log(`Rate: ${rate}`);
 ```
 

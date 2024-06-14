@@ -24,7 +24,7 @@
 
 class FinMaster {
   //PV
-  calculatePV(rate, nper, pmt, fv = 0, type = 0) {
+  PV(rate, nper, pmt, fv = 0, type = 0) {
     let pv = 0;
 
     // Calculate discount factor
@@ -47,7 +47,7 @@ class FinMaster {
   }
 
   //FV
-  calculateFV(rate, nper, pmt, pv = 0, type = 0) {
+  FV(rate, nper, pmt, pv = 0, type = 0) {
     let fv = 0;
   
     // Calculate discount factor
@@ -70,7 +70,7 @@ class FinMaster {
   }
 
   //PMT
-  calculatePMT(rate, nper, pv, fv = 0, type = 0) {
+  PMT(rate, nper, pv, fv = 0, type = 0) {
     const r = rate;
 
     let pmt;
