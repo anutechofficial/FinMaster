@@ -75,7 +75,7 @@ class FinMaster {
 
     let pmt;
     if (r === 0) {
-      pmt = -(pv + fv) / nper;
+      pmt = (pv + fv) / nper;
     } else {
       if (type === 0) {
         pmt = (pv * r) / (1 - Math.pow(1 + r, -nper));
