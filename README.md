@@ -62,11 +62,11 @@ npm install finmaster
 Then, import `FinMaster` into your project:
 
 ```javascript
-const FinMaster = require('finmaster');
+const FinMaster = require("finmaster");
 const finMaster = new FinMaster();
 
 let pv = finMaster.PV(0.05, 10, 1000);
-console.log('Present Value:', pv);
+console.log("Present Value:", pv);
 ```
 
 ### ES6 Modules
@@ -80,12 +80,12 @@ npm install finmaster
 Import `FinMaster` into your project:
 
 ```javascript
-import FinMaster from 'finmaster';
+import FinMaster from "finmaster";
 
 const finMaster = new FinMaster();
 
 let pv = finMaster.PV(0.05, 10, 1000);
-console.log('Present Value:', pv);
+console.log("Present Value:", pv);
 ```
 
 ### TypeScript
@@ -99,12 +99,12 @@ npm install finmaster
 Then, import and use `FinMaster`:
 
 ```typescript
-import { FinMaster } from 'finmaster';
+import { FinMaster } from "finmaster";
 
 const finMaster = new FinMaster();
 
 let pv = finMaster.PV(0.05, 10, 1000);
-console.log('Present Value:', pv);
+console.log("Present Value:", pv);
 ```
 
 ---
@@ -113,7 +113,7 @@ console.log('Present Value:', pv);
 
 ### PV (Present Value)
 
-The PV (Present Value) function in Javascript is used to calculate the present value of an investment or loan based on a series of future payments. This is particularly useful in financial analysis to determine how much a series of future payments is worth in today's terms, given a specific interest rate.
+The PV (Present Value) function is used to calculate the present value of an investment or loan based on a series of future payments. This is particularly useful in financial analysis to determine how much a series of future payments is worth in today's terms, given a specific interest rate.
 
 ```javascript
 const pv = finMaster.PV(rate, nper, pmt, fv, type);
@@ -153,15 +153,15 @@ This function returns approximately -$4329.48, meaning the present value of rece
 Suppose you are considering an investment that pays $500 per month for the next 3 years and the interest rate is 6% annually. You want to find out the present value of this investment.
 
 1. **rate**: 6% annually, which is 0.5% per month (0.06/12)
-2. **nper**: 3 years, which is 36 months (3*12)
+2. **nper**: 3 years, which is 36 months (3\*12)
 3. **pmt**: -$500
 4. **fv**: 0
 5. **type**: 0
 
-The formula in Javascript:
+The function in Javascript:
 
 ```javascript
-const pv = finMaster.PV(0.005, 36, -500)
+const pv = finMaster.PV(0.005, 36, -500);
 ```
 
 This function will give you the present value of the investment based on the specified parameters.
@@ -170,7 +170,7 @@ By understanding and using the PV function, you can make more informed financial
 
 ### FV (Future Value)
 
-The FV (Future Value) function in Javascript is used to calculate the future value of an investment based on periodic, constant payments and a constant interest rate. This function helps in determining how much an investment will grow over time.
+The FV (Future Value) function is used to calculate the future value of an investment based on periodic, constant payments and a constant interest rate. This function helps in determining how much an investment will grow over time.
 
 ```javascript
 const fv = finMaster.FV(rate, nper, pmt, pv, type);
@@ -187,7 +187,7 @@ const fv = finMaster.FV(rate, nper, pmt, pv, type);
 Imagine you want to find out the future value of saving $200 monthly for 5 years with an annual interest rate of 5%.
 
 1. **rate**: 5% annually (0.05/12 = 0.004167 monthly)
-2. **nper**: 5 years (5*12 = 60 months)
+2. **nper**: 5 years (5\*12 = 60 months)
 3. **pmt**: -$200 (outflows are represented as negative values in Javascript financial functions)
 4. **pv**: 0 (default, since you are starting with zero initial investment)
 5. **type**: 0 (default, since payments are made at the end of each period)
@@ -212,12 +212,12 @@ This function returns approximately $13,243.44, meaning the future value of savi
 Suppose you are planning to save $500 monthly for 10 years in an investment account that offers a 6% annual interest rate compounded monthly. You want to find out how much you will have at the end of the 10 years.
 
 1. **rate**: 6% annually, which is 0.5% per month (0.06/12)
-2. **nper**: 10 years, which is 120 months (10*12)
+2. **nper**: 10 years, which is 120 months (10\*12)
 3. **pmt**: -$500
 4. **pv**: 0 (since you are starting with zero initial investment)
 5. **type**: 0 (since deposits are made at the end of each period)
 
-The formula in Javascript:
+The function in Javascript:
 
 ```javascript
 const fv = finMaster.FV(0.005, 120, -500);
@@ -229,7 +229,7 @@ By understanding and using the FV function, you can plan for future financial go
 
 ### PMT (Payment)
 
-The PMT function in Javascript is used to calculate the payment for a loan based on constant payments and a constant interest rate. This function is helpful in determining the regular payment amount needed to pay off a loan or an investment over a specified period.
+The PMT function is used to calculate the payment for a loan based on constant payments and a constant interest rate. This function is helpful in determining the regular payment amount needed to pay off a loan or an investment over a specified period.
 
 ```javascript
 const pmt = finMaster.PMT(rate, nper, pv, fv, type);
@@ -246,7 +246,7 @@ const pmt = finMaster.PMT(rate, nper, pv, fv, type);
 Imagine you take out a loan of $10,000 to be paid back over 5 years with an annual interest rate of 6%.
 
 1. **rate**: 6% annually (0.06/12 = 0.005 monthly)
-2. **nper**: 5 years (5*12 = 60 months)
+2. **nper**: 5 years (5\*12 = 60 months)
 3. **pv**: $10,000
 4. **fv**: 0 (default, since we are not considering any future value)
 5. **type**: 0 (default, since payments are made at the end of each period)
@@ -269,12 +269,12 @@ This function returns approximately -$193.33, meaning the monthly payment to pay
 Suppose you are planning to save $15,000 over 3 years in an investment account that offers a 4% annual interest rate compounded monthly. You want to find out how much you need to deposit each month.
 
 1. **rate**: 4% annually, which is 0.333% per month (0.04/12)
-2. **nper**: 3 years, which is 36 months (3*12)
+2. **nper**: 3 years, which is 36 months (3\*12)
 3. **pv**: 0 (since you are starting with zero savings)
 4. **fv**: $15,000
 5. **type**: 0 (since deposits are made at the end of each period)
 
-The formula in Javascript:
+The function in Javascript:
 
 ```javascript
 const pmt = finMaster.PMT(0.00333, 36, 0, 15000);
