@@ -1,7 +1,6 @@
 # FinMaster
 
 `FinMaster` is a comprehensive financial calculation library for Node.js, providing functions to calculate Present Value (PV), Future Value (FV), Payment (PMT), Interest Payment (IPMT), Net Present Value (NPV), Internal Rate of Return (IRR), and Rate (RATE).
-Some Functions are in Under Development 🚧 please go through with this Documentation..
 
 ## Table of Contents
 
