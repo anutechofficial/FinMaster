@@ -529,6 +529,8 @@ This function is especially useful for financial applications where users need t
 
 ## Contributing
 
+<a href="https://buymeacoffee.com/anutechofficial" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 Contributions are welcome! Please feel free to submit a pull request or open an issue to improve the library.
 
 ## License
