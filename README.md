@@ -297,7 +297,7 @@ By using the PMT function, you can plan and manage your loan repayments or savin
 The NPV (Net Present Value) function is used to calculate the net present value of an investment based on a series of periodic cash flows and a discount rate. It is particularly useful for evaluating the profitability of an investment or project by determining the present value of future cash flows minus the initial investment.
 
 ```javascript
-const npv = finMaster.NPV(rate, ...cashFlows);
+const npv = finMaster.NPV(rate, cashFlows);
 ```
 
 - **rate**: The discount rate over one period.
