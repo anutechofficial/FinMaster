@@ -1,6 +1,6 @@
 # FinMaster
 
-`FinMaster` is a comprehensive financial calculation library for Node.js, providing functions to calculate Present Value (PV), Future Value (FV), Payment (PMT), Net Present Value (NPV), Internal Rate of Return (IRR), Rate (RATE) and other Advance functions. 
+`FinMaster` is a comprehensive financial calculation library for Node.js, providing functions to calculate Present Value (PV), Future Value (FV), Payment (PMT), Net Present Value (NPV), Internal Rate of Return (IRR), Rate (RATE) and other Advance functions.
 
 ## Table of Contents
 
@@ -43,6 +43,7 @@
       - [Returns](#returns)
       - [Throws](#throws)
       - [Example](#example)
+  - [Support](#support)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -527,9 +528,13 @@ console.log(`Remaining loan term: ${remainingTerm} months`);
 
 This function is especially useful for financial applications where users need to track the duration of their loans and understand how much time remains before they are paid off.
 
-## Contributing
+## Support
 
-<a href="https://buymeacoffee.com/anutechofficial" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+If you like my work, you can buy me a coffee by clicking the button below:
+
+[![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=anutechofficial&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://buymeacoffee.com/anutechofficial)
+
+## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue to improve the library.
 
