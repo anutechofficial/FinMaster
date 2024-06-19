@@ -323,7 +323,7 @@ let cashFlow = [3000, 4000, 5000, 6000];
 const npv = finMaster.NPV(rate, cashFlow) - 10000;
 ```
 
-This function returns approximately $4,216.91, meaning the net present value of the investment, considering the initial $10,000 investment and the 8% discount rate, is about $4,216.91.
+This function returns approximately $4586.47 meaning the net present value of the investment, considering the initial $10,000 investment and the 8% discount rate, is about $4586.47.
 
 #### Tips for Using NPV Function
 
@@ -361,7 +361,7 @@ By understanding and using the NPV function, you can assess whether an investmen
 The IRR (Internal Rate of Return) function is used to calculate the internal rate of return for a series of cash flows (both incoming and outgoing). The IRR is the discount rate that makes the net present value (NPV) of the cash flows equal to zero. It is commonly used to evaluate the profitability of investments or projects.
 
 ```javascript
-let cashFlow = [100, 200, 300, 400];
+let cashFlow = [-20000, 5000, 7000, 8000, 10000];
 let guess = 0.1; //Optional
 const irr = finMaster.IRR(cashFlow, guess);
 ```
@@ -383,7 +383,7 @@ let cashFlow = [-10000, 3000, 4000, 5000, 6000];
 const irr = finMaster.IRR(cashFlow);
 ```
 
-This function returns approximately 20.62%, meaning the internal rate of return for this series of cash flows is about 20.62%.
+This function returns approximately 24.88%, meaning the internal rate of return for this series of cash flows is about 24.88%.
 
 #### Tips for Using IRR Function
 
