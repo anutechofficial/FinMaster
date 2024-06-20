@@ -1,6 +1,6 @@
 {
   "name": "finmaster",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "FinMaster: The ultimate toolkit for advanced financial calculations and analysis, designed to empower financial professionals and developers alike.",
   "main": "src/finmaster.js",
   "scripts": {
@@ -25,7 +25,11 @@
     "Excel",
     "Functions"
   ],
-  "author": "Anurag Yadav (https://anutechofficial.github.io/portfolio/)",
+  "author": {
+    "name": "Anurag Yadav",
+    "email": "anutechofficial@gmail.com",
+    "url": "https://anutechofficial.github.io/portfolio/"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/anutechofficial/FinMaster/issues"

@@ -17,31 +17,30 @@
       - [Tips for Using PV Function](#tips-for-using-pv-function)
       - [Practical Example](#practical-example)
     - [FV (Future Value)](#fv-future-value)
-      - [Example Usage FV](#example-usage-fv)
+      - [Example Usage](#example-usage-1)
       - [Tips for Using FV Function](#tips-for-using-fv-function)
-      - [Practical Example FV](#practical-example-fv)
+      - [Practical Example](#practical-example-1)
     - [PMT (Payment)](#pmt-payment)
-      - [Example Usage PMT](#example-usage-pmt)
+      - [Example Usage](#example-usage-2)
       - [Tips for Using PMT Function](#tips-for-using-pmt-function)
-      - [Practical Example PMT](#practical-example-pmt)
+      - [Practical Example](#practical-example-2)
     - [NPV (Net Present Value)](#npv-net-present-value)
-      - [Example Usage NPV](#example-usage-npv)
+      - [Example Usage](#example-usage-3)
       - [Tips for Using NPV Function](#tips-for-using-npv-function)
-      - [Practical Example NPV](#practical-example-npv)
+      - [Practical Example](#practical-example-3)
     - [IRR (Internal Rate of Return)](#irr-internal-rate-of-return)
-      - [Example Usage IRR](#example-usage-irr)
+      - [Example Usage](#example-usage-4)
       - [Tips for Using IRR Function](#tips-for-using-irr-function)
-      - [Practical Example IRR](#practical-example-irr)
+      - [Practical Example](#practical-example-4)
     - [RATE](#rate)
-      - [Example Usage RATE](#example-usage-rate)
+      - [Example Usage](#example-usage-5)
       - [Tips for Using RATE Function](#tips-for-using-rate-function)
-      - [Practical Example RATE](#practical-example-rate)
+      - [Practical Example](#practical-example-5)
   - [Advance Functions](#advance-functions)
     - [Get Remaining Loan Term's](#get-remaining-loan-terms)
       - [Function Signature](#function-signature)
       - [Parameters](#parameters)
       - [Returns](#returns)
-      - [Throws](#throws)
       - [Example](#example)
   - [Support](#support)
   - [Contributing](#contributing)
@@ -190,7 +189,7 @@ const fv = finMaster.FV(rate, nper, pmt, pv, type);
 - **pv** (optional): The present value or initial amount of the investment. If omitted, it defaults to 0.
 - **type** (optional): The timing of the payment. If omitted, it defaults to 0. Use 0 if payments are due at the end of the period and 1 if payments are due at the beginning of the period.
 
-#### Example Usage FV
+#### Example Usage
 
 Imagine you want to find out the future value of saving $200 monthly for 5 years with an annual interest rate of 5%.
 
@@ -215,7 +214,7 @@ This function returns approximately $13,243.44, meaning the future value of savi
 - **Present Value (pv)**: If there is an initial investment, include it; otherwise, it defaults to 0.
 - **Type of Payment**: Specify whether payments are made at the beginning or end of the period. Most annuities assume end-of-period payments.
 
-#### Practical Example FV
+#### Practical Example
 
 Suppose you are planning to save $500 monthly for 10 years in an investment account that offers a 6% annual interest rate compounded monthly. You want to find out how much you will have at the end of the 10 years.
 
@@ -249,7 +248,7 @@ const pmt = finMaster.PMT(rate, nper, pv, fv, type);
 - **fv** (optional): The future value or a cash balance you want to attain after the last payment is made. If omitted, it defaults to 0.
 - **type** (optional): The timing of the payment. If omitted, it defaults to 0. Use 0 if payments are due at the end of the period and 1 if payments are due at the beginning of the period.
 
-#### Example Usage PMT
+#### Example Usage
 
 Imagine you take out a loan of $10,000 to be paid back over 5 years with an annual interest rate of 6%.
 
@@ -272,7 +271,7 @@ This function returns approximately -$193.33, meaning the monthly payment to pay
 - **Future Value (fv)**: This is optional and only used if you are expecting a lump sum at the end of the payment periods.
 - **Type of Payment**: Specify whether payments are made at the beginning or end of the period. Most loans assume end-of-period payments.
 
-#### Practical Example PMT
+#### Practical Example
 
 Suppose you are planning to save $15,000 over 3 years in an investment account that offers a 4% annual interest rate compounded monthly. You want to find out how much you need to deposit each month.
 
@@ -303,7 +302,7 @@ const npv = finMaster.NPV(rate, cashFlows);
 - **rate**: The discount rate over one period.
 - **value1, value2, ...**: 1 to 254 arguments representing the cash flows (payments and income). Cash outflows (payments) are negative values, and cash inflows (receipts) are positive values.
 
-#### Example Usage NPV
+#### Example Usage
 
 Imagine you want to evaluate an investment that requires an initial investment of $10,000 and provides annual returns of $3,000, $4,000, $5,000, and $6,000 over the next four years. You want to calculate the NPV of these cash flows assuming a discount rate of 8%.
 
@@ -332,7 +331,7 @@ This function returns approximately $4586.47 meaning the net present value of th
 - **Initial Investment**: Include the initial investment outside of the NPV function, as the function only evaluates future cash flows.
 - **Discount Rate**: The discount rate reflects the cost of capital or the required rate of return.
 
-#### Practical Example NPV
+#### Practical Example
 
 Suppose you are considering a project that requires an initial investment of $20,000 and will generate annual returns of $5,000, $7,000, $8,000, and $10,000 over the next four years. You want to calculate the NPV with a discount rate of 10%.
 
@@ -369,7 +368,7 @@ const irr = finMaster.IRR(cashFlow, guess);
 - **values**: An array or a range of cells that contains the series of cash flows. The series should include at least one negative value (representing an outflow) and one positive value (representing an inflow).
 - **guess** (optional): A number that you guess is close to the result of IRR. If omitted, Excel uses 0.1 (10%) as the default guess.
 
-#### Example Usage IRR
+#### Example Usage
 
 Imagine you are considering an investment that requires an initial investment of $10,000 and provides annual returns of $3,000, $4,000, $5,000, and $6,000 over the next four years. You want to calculate the IRR of these cash flows.
 
@@ -390,9 +389,9 @@ This function returns approximately 24.88%, meaning the internal rate of return 
 - **Consistent Cash Flow Periods**: Ensure that the cash flows occur at regular intervals (e.g., monthly, annually).
 - **Include All Cash Flows**: The initial investment and all subsequent cash flows must be included in the series.
 - **Cash Flow Sign Convention**: Typically, the initial investment (cash outflow) is negative, and subsequent returns (cash inflows) are positive.
-- **Guess Parameter**: If the IRR function returns a #NUM! error, providing a different guess may help find a solution.
+- **Guess Parameter**: If the IRR function returns throw error, providing a different guess may help find a solution.
 
-#### Practical Example IRR
+#### Practical Example
 
 Suppose you are considering a project that requires an initial investment of $20,000 and will generate annual returns of $5,000, $7,000, $8,000, and $10,000 over the next four years. You want to calculate the IRR for these cash flows.
 
@@ -423,7 +422,7 @@ const rate = finMaster.RATE(nper, pmt, pv, fv, type, guess);
 - **type** (optional): The timing of the payment. If omitted, it defaults to 0. Use 0 if payments are due at the end of the period and 1 if payments are due at the beginning of the period.
 - **guess** (optional): Your guess for what the rate will be. If omitted, Excel uses 0.1 (10%) as the default guess.
 
-#### Example Usage RATE
+#### Example Usage
 
 Imagine you take out a loan of $10,000 to be paid back over 5 years with monthly payments of $200. You want to find out the monthly interest rate.
 
@@ -454,10 +453,10 @@ This gives an annual interest rate of approximately 5.84%.
 
 - **Consistent Periods**: Ensure the number of periods and payments match the compounding periods (e.g., monthly payments for a monthly interest rate).
 - **Cash Flow Sign Convention**: Cash outflows (payments) are usually entered as negative numbers, and cash inflows (receipts) as positive numbers.
-- **Guess Parameter**: If the RATE function returns a #NUM! error or doesn't converge, providing a different guess may help find a solution.
+- **Guess Parameter**: If the RATE function throw error or doesn't converge, providing a different guess may help find a solution.
 - **Annual Rate Conversion**: If you get a monthly rate and need the annual rate, multiply the result by the number of periods per year.
 
-#### Practical Example RATE
+#### Practical Example
 
 Suppose you are planning to save $500 monthly for 10 years to reach a future value of $100,000. You want to find out the monthly interest rate required to reach this goal.
 
@@ -511,10 +510,6 @@ declare function getRemainingLoanTerm(
 #### Returns
 
 - `number`: The remaining loan term in months, or 0 if the loan is already paid off.
-
-#### Throws
-
-- Will throw an error if the loan term unit is invalid.
 
 #### Example
 
