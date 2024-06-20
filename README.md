@@ -527,7 +527,7 @@ This function is especially useful for financial applications where users need t
 
 If you like my work, you can buy me a coffee by clicking the button below:
 
-[![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=anutechofficial&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff)](https://buymeacoffee.com/anutechofficial)
+[![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=anutechofficial&button_colour=fcfcfc&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)](https://buymeacoffee.com/anutechofficial)
 
 ## Contributing
 
