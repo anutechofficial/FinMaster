@@ -1,7 +1,7 @@
 /**
  * @class FinMaster
  */
-export declare class FinMaster {
+declare class FinMaster {
   /**
    * Present Value (PV)
    * The PV (Present Value) function in Javascript is used to calculate the present value of an investment or loan based on a series of future payments.
@@ -115,6 +115,5 @@ export declare class FinMaster {
   ): number;
 }
 
-declare module "finmaster" {
-  export = FinMaster;
-}
+export = FinMaster;
+export as namespace FinMaster;

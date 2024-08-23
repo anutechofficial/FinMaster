@@ -210,6 +210,16 @@ class FinMaster {
   //Upcoming Functions
 }
 
+// // CommonJS and ES module compatibility
+// if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+//     module.exports = FinMaster;
+//     module.exports.default = FinMaster; // For ES module default import
+//     module.exports.FinMaster = FinMaster; // Named export
+// } else {
+//     // For global usage in browser
+//     window.FinMaster = FinMaster;
+// }
+
 module.exports = FinMaster;
 module.exports.default = FinMaster;
 module.exports.FinMaster = FinMaster;
